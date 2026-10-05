@@ -283,27 +283,30 @@
         </div>
     </section>
 
-
-    <!-- Profil MC -->
+         <!-- Profil MC -->
     <section id="profil" class="px-5 md:px-10 pt-12 pb-10 relative z-10 max-w-4xl mx-auto">
         <div class="reveal glass-glow p-8 md:p-14 text-center border-t-4 border-warnakedua">
             <h2 class="text-xl md:text-2xl font-black text-warnautama dark:text-white tracking-tight uppercase mb-2">Lead Master of Ceremony</h2>
             <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-warnakedua mb-6">Fistra Deka Elvira</h3>
-            <div class="w-full max-w-xs sm:max-w-sm mx-auto rounded-3xl overflow-hidden shadow-xl border border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 aspect-[4/5] relative">
-                <img src="foto/mc.png" alt="Fistra Deka Elvira" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="w-full h-full flex items-center justify-center hidden"><span class="text-xs text-gray-500 font-bold uppercase tracking-widest">foto/mc.png</span></div>
+            
+            <!-- Foto MC: Rasio 1:1 (Kotak), Diperkecil, TEPAT di Bawah Nama -->
+            <div class="w-48 sm:w-56 md:w-64 mx-auto rounded-[2rem] overflow-hidden shadow-xl border border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 aspect-square relative mb-6 group">
+                <!-- Foto MC Lokal (object-cover akan memotong rapi jadi kotak tanpa merusak rasio wajah) -->
+                <img src="foto/mc.png" alt="Fistra Deka Elvira" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                <div class="w-full h-full flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/mc.png</span></div>
             </div>
+
             <p class="text-[11px] sm:text-xs md:text-sm text-gray-700 dark:text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto mb-8">
                 Sebagai figur utama dan Founder dari <strong class="text-warnakedua">@mc.nusantaraa</strong>, Fistra menghadirkan dedikasi penuh di setiap panggung. Menguasai manajemen audiens, intonasi vokal, dan penyesuaian *tone* acara.
             </p>
-            <div class="grid grid-cols-2 gap-4 mt-8 w-full max-w-lg mx-auto">
+
+            <div class="grid grid-cols-2 gap-4 w-full max-w-lg mx-auto">
                 <div class="bg-gray-50 dark:bg-warnakeempat p-4 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-inner">
                     <span class="block text-xs sm:text-sm font-black text-warnautama dark:text-white mb-0.5">Founder</span>
                     <span class="text-[9px] sm:text-[10px] text-warnakedua font-bold tracking-widest uppercase">@mc.nusantaraa</span>
                 </div>
                 <div class="bg-gray-50 dark:bg-warnakeempat p-4 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-inner">
                     <span class="block text-xs sm:text-sm font-black text-warnautama dark:text-white mb-0.5">Professional</span>
-                    <!-- PERUBAHAN MC, Muse, Voice Over -->
                     <span class="text-[9px] sm:text-[10px] text-warnakedua font-bold tracking-widest uppercase">MC, Muse, Voice Over</span>
                 </div>
             </div>

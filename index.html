@@ -97,10 +97,23 @@
     </style>
 </head>
 <body class="bg-custom-gradient text-warnautama dark:text-white font-sans pb-4 md:pb-0 overflow-x-hidden relative">
-            <!-- Loading Screen Animasi Logo Berkedip -->
+    <!-- 1. Tampilan Layar Loading -->
     <div id="loading-screen" class="fixed inset-0 z-[9999] bg-custom-gradient flex items-center justify-center transition-opacity duration-700 ease-in-out">
         <img src="foto/logo.png" alt="Loading MC Nusantara" class="h-24 sm:h-32 w-auto object-contain animate-pulse" onerror="this.style.display='none';">
     </div>
+
+    <!-- 2. Script Eksekusi Langsung (Menempel dengan HTML-nya) -->
+    <script>
+        setTimeout(function() {
+            var loader = document.getElementById('loading-screen');
+            if (loader) {
+                loader.style.opacity = '0';
+                setTimeout(function() {
+                    loader.style.display = 'none';
+                }, 700);
+            }
+        }, 2500);
+    </script>
 
     <!-- Animasi Blob -->
     <div class="fixed inset-0 z-0 overflow-hidden pointer-events-none">
@@ -645,17 +658,6 @@
         for (let i=0; i<m.length; i++) if (e.target == m[i]) { m[i].classList.remove('active'); document.body.style.overflow = 'auto'; }
     }
 
-    // Script Loading Tembak Langsung (Taruh di sini, TANPA tag <script> lagi)
-    setTimeout(function() {
-        var loader = document.getElementById('loading-screen');
-        if (loader) {
-            loader.style.opacity = '0';
-            setTimeout(function() {
-                loader.style.display = 'none';
-            }, 700);
-        }
-    }, 2500);
-
-</script>
-</body>
+    </script>
+  </body>
 </html>

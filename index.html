@@ -110,9 +110,14 @@
                 loader.style.opacity = '0';
                 setTimeout(function() {
                     loader.style.display = 'none';
+                    
+                    // --- TAMBAHAN BARU: Membangunkan konten yang tidur di iOS ---
+                    window.dispatchEvent(new Event('scroll'));
+                    setTimeout(function() { window.dispatchEvent(new Event('scroll')); }, 300);
+                    
                 }, 700);
             }
-        }, 2000);
+        }, 2500);
     </script>
 
     <!-- Animasi Blob -->

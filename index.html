@@ -637,31 +637,25 @@
             window.open(`https://wa.me/6288991068917?text=${msg}`, '_blank');
         });
 
-        // Fungsi Modal Pop-up Footer
-        function bukaModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
-        function tutupModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
-        window.onclick = function(e) {
-            const m = document.getElementsByClassName('modal-overlay');
-            for (let i=0; i<m.length; i++) if (e.target == m[i]) { m[i].classList.remove('active'); document.body.style.overflow = 'auto'; }
-        }
-    <!-- Loading Screen Animasi Logo Berkedip -->
-    <div id="loading-screen" class="fixed inset-0 z-[9999] bg-custom-gradient flex items-center justify-center transition-opacity duration-700 ease-in-out">
-        <img src="foto/logo.png" alt="Loading MC Nusantara" class="h-24 sm:h-32 w-auto object-contain animate-pulse">
-    </div>
+     // Fungsi Modal Pop-up Footer
+    function bukaModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
+    function tutupModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
+    window.onclick = function(e) {
+        const m = document.getElementsByClassName('modal-overlay');
+        for (let i=0; i<m.length; i++) if (e.target == m[i]) { m[i].classList.remove('active'); document.body.style.overflow = 'auto'; }
+    }
 
-    <!-- Script Pengaman Loading Khusus iOS/iPhone -->
-    <script>
-        window.addEventListener('DOMContentLoaded', function() {
+    // Script Loading Tembak Langsung (Taruh di sini, TANPA tag <script> lagi)
+    setTimeout(function() {
+        var loader = document.getElementById('loading-screen');
+        if (loader) {
+            loader.style.opacity = '0';
             setTimeout(function() {
-                var loader = document.getElementById('loading-screen');
-                if (loader) {
-                    loader.style.opacity = '0';
-                    setTimeout(function() {
-                        loader.style.display = 'none';
-                    }, 700);
-                }
-            }, 2500);
-        });
-    </script>
+                loader.style.display = 'none';
+            }, 700);
+        }
+    }, 2500);
+
+</script>
 </body>
 </html>

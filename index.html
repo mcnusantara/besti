@@ -63,7 +63,7 @@
         }
         .glass-glow:hover {
             box-shadow: 0 0 35px rgba(255, 192, 0, 0.35);
-            transform: translate3d(0, -5px, 0); /* OPTIMASI IOS 3D */
+            transform: translate3d(0, -5px, 0);
         }
 
         /* Header - Layer terpisah untuk backdrop-filter */
@@ -525,40 +525,29 @@
         if (localStorage.getItem("theme") === "dark") document.documentElement.classList.add("dark");
 
         document.addEventListener("DOMContentLoaded", function() {
-            // Animasi Scroll Galeri
-            function autoScrollHorizontal(id) {
-                const el = document.getElementById(id); 
-                if (!el) return;
-                el.innerHTML += el.innerHTML; 
-                let isPaused = false;
-                el.addEventListener('mouseenter', () => isPaused = true);
-                el.addEventListener('mouseleave', () => isPaused = false);
-                el.addEventListener('touchstart', () => isPaused = true, {passive:true});
-                el.addEventListener('touchend', () => { setTimeout(() => isPaused = false, 1500); });
-                function step() { 
-                    if (!isPaused) { 
-                        el.scrollLeft += 0.5; 
-                        if (el.scrollLeft >= el.scrollWidth / 2) el.scrollLeft -= el.scrollWidth / 2; 
-                    } 
-                    requestAnimationFrame(step); 
-                }
-                requestAnimationFrame(step);
-            }  
-            autoScrollHorizontal('scroll-galeri');
-
-            // Animasi Scroll Reveal
+            
+            // 1. OPTIMASI ANIMASI REVEAL DENGAN INTERSECTION OBSERVER
+            // Jauh lebih ringan dari pada window.addEventListener("scroll")
             const reveals = document.querySelectorAll(".reveal");
-            function revealOnScroll() {
-                for (let i = 0; i < reveals.length; i++) {
-                    let windowHeight = window.innerHeight;
-                    let elementTop = reveals[i].getBoundingClientRect().top;
-                    if (elementTop < windowHeight - 50) reveals[i].classList.add("active");
-                }
-            }
-            window.addEventListener("scroll", revealOnScroll);
-            setTimeout(revealOnScroll, 100);
+            const revealOptions = {
+                threshold: 0.1, // Muncul ketika 10% elemen terlihat
+                rootMargin: "0px 0px -50px 0px"
+            };
 
-            // Chatbot Logic
+            const revealObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    entry.target.classList.add("active");
+                    // Berhenti memantau setelah elemen muncul agar memori lega
+                    observer.unobserve(entry.target);
+                });
+            }, revealOptions);
+
+            reveals.forEach(reveal => {
+                revealObserver.observe(reveal);
+            });
+
+            // 2. CHATBOT LOGIC
             const t = document.getElementById("chat-trigger");
             const w = document.getElementById("chat-window");
             const cx = document.getElementById("close-chat");
@@ -659,14 +648,13 @@
             window.open(`https://wa.me/6288991068917?text=${msg}`, '_blank');
         });
 
-     // Fungsi Modal Pop-up Footer
-    function bukaModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
-    function tutupModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
-    window.onclick = function(e) {
-        const m = document.getElementsByClassName('modal-overlay');
-        for (let i=0; i<m.length; i++) if (e.target == m[i]) { m[i].classList.remove('active'); document.body.style.overflow = 'auto'; }
-    }
-
+        // Fungsi Modal Pop-up Footer
+        function bukaModal(id) { document.getElementById(id).classList.add('active'); document.body.style.overflow = 'hidden'; }
+        function tutupModal(id) { document.getElementById(id).classList.remove('active'); document.body.style.overflow = 'auto'; }
+        window.onclick = function(e) {
+            const m = document.getElementsByClassName('modal-overlay');
+            for (let i=0; i<m.length; i++) if (e.target == m[i]) { m[i].classList.remove('active'); document.body.style.overflow = 'auto'; }
+        }
     </script>
-  </body>
+</body>
 </html>

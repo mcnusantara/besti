@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MC Nusantara - Master of Ceremony Agency</title>
-    <meta name="description" content="MC Nusantara - Agensi penyedia jasa Master of Ceremony (MC), Voice Over, dan Muse profesional untuk acara pernikahan, seminar nasional, kenegaraan, hingga commercial event terbaik." />
-    <meta name="keywords" content="Sewa MC acara, Agency MC, MC pernikahan, MC seminar, Master of Ceremony profesional, MC Nusantara, Voice Over, Muse, MC formal" />
+    <title>MC Nusantara - Master of Ceremony Agency & Academy</title>
+    <meta name="description" content="MC Nusantara - Agensi penyedia jasa Master of Ceremony (MC), Voice Over, dan Muse profesional serta Pelatihan Public Speaking terbaik." />
+    <meta name="keywords" content="Sewa MC acara, Agency MC, MC pernikahan, MC seminar, Pelatihan MC, Kelas Public Speaking, Master of Ceremony profesional, MC Nusantara" />
     <meta name="author" content="MC Nusantara X Media Tulisan Manusia" />
     <meta property="og:title" content="MC Nusantara - Professional Master of Ceremony Agency" />
-    <meta property="og:description" content="Solusi profesional untuk memandu berbagai event Anda—mulai dari acara formal kenegaraan, pernikahan impian, hingga seminar nasional." />
+    <meta property="og:description" content="Solusi profesional untuk memandu berbagai event Anda dan tempat belajar Public Speaking berkelas." />
     <meta property="og:image" content="foto/logo.png" />
     <meta property="og:url" content="https://mcnusantara.mediatulisanmanusia.com" />
     <meta property="og:type" content="website" />
@@ -105,6 +105,7 @@
     </style>
 </head>
 <body class="bg-custom-gradient text-warnautama dark:text-white font-sans pb-4 md:pb-0 overflow-x-hidden relative">
+    
     <!-- 1. Tampilan Layar Loading -->
     <div id="loading-screen" class="fixed inset-0 z-[9999] bg-custom-gradient flex items-center justify-center transition-opacity duration-700 ease-in-out">
         <img src="foto/logo.png" alt="Loading MC Nusantara" class="h-24 sm:h-32 w-auto object-contain animate-pulse" onerror="this.style.display='none';">
@@ -133,15 +134,15 @@
 
     <!-- HEADER -->
     <header class="fixed top-4 left-0 right-0 mx-auto w-[95%] sm:w-11/12 max-w-[1200px] glass-header rounded-full px-4 sm:px-5 py-2.5 sm:py-3 flex items-center justify-between z-50 shadow-lg border border-gray-200/50 dark:border-gray-800/80 transition-colors">
-        <div class="flex items-center gap-2 sm:gap-3 cursor-pointer flex-shrink-0" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <div class="flex items-center gap-2 sm:gap-3 cursor-pointer flex-shrink-0" onclick="bukaHalaman('beranda')">
             <img src="foto/logo.png" alt="Logo MC Nusantara" class="h-8 sm:h-11 w-auto object-contain bg-transparent" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=100&q=80'; this.classList.add('rounded-lg'); this.style.display='none';">
             <span class="text-[14px] sm:text-lg md:text-xl font-black tracking-wide leading-none">MC <span class="text-warnakedua">NUSANTARA</span></span>
         </div>
         
         <nav class="hidden md:flex items-center space-x-8 text-xs font-bold text-gray-700 dark:text-gray-300">
-            <a href="#beranda" class="hover:text-warnakedua transition">Beranda</a>
-            <a href="#layanan" class="hover:text-warnakedua transition">Layanan & Galeri</a>
-            <a href="#profil" class="hover:text-warnakedua transition">Profil MC</a>
+            <button onclick="bukaHalaman('beranda')" class="hover:text-warnakedua transition">Beranda</button>
+            <button onclick="bukaHalaman('beranda'); setTimeout(()=>document.getElementById('layanan').scrollIntoView({behavior:'smooth'}), 300);" class="hover:text-warnakedua transition">Layanan & Galeri</button>
+            <button onclick="bukaHalaman('beranda'); setTimeout(()=>document.getElementById('profil').scrollIntoView({behavior:'smooth'}), 300);" class="hover:text-warnakedua transition">Profil MC</button>
         </nav>
 
         <div class="flex items-center gap-1.5 sm:gap-2 relative">
@@ -149,196 +150,215 @@
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
                 <svg class="w-4 h-4 sm:w-5 sm:h-5 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
             </button>
-            <a href="#booking" class="bg-warnakedua hover:bg-warnaketiga text-black font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-[9px] sm:text-[10px] md:text-xs transition uppercase tracking-widest shadow-md hover:shadow-lg">
+            <button onclick="bukaHalaman('booking')" class="bg-warnakedua hover:bg-warnaketiga text-black font-extrabold px-3 sm:px-5 py-2 sm:py-2.5 rounded-full text-[9px] sm:text-[10px] md:text-xs transition uppercase tracking-widest shadow-md hover:shadow-lg">
                 Booking
-            </a>
+            </button>
         </div>
     </header>
 
     <div class="h-24 sm:h-28 md:h-32"></div>
 
-    <!-- Hero Section -->
-    <section id="beranda" class="px-5 md:px-10 pt-4 pb-12 relative z-10 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div class="reveal flex flex-col justify-center items-center lg:items-start text-center lg:text-left w-full mx-auto lg:mx-0">
-                <div class="inline-flex items-center space-x-2 bg-warnakedua/10 border border-warnakedua/20 px-4 py-2 rounded-full text-[10px] md:text-xs font-bold text-warnakedua tracking-wide uppercase mb-6">
-                    <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
-                    <span>Professional Master of Ceremony Agency</span>
-                </div>
-                <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-warnautama dark:text-white leading-[1.2] mb-5">
-                    WUJUDKAN ACARA BERKESAN & ELEGAN BERSAMA <span class="text-warnakedua">MC NUSANTARA</span>
-                </h1>
-                <p class="text-[11px] sm:text-xs md:text-sm text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0 mb-8">
-                    Solusi profesional untuk memandu berbagai event Anda mulai dari acara formal kenegaraan, pernikahan impian, seminar nasional, hingga commercial event dengan pembawaan yang interaktif dan berkelas.
-                </p>
-                <div class="flex flex-col w-full sm:flex-row gap-3 sm:gap-4 sm:w-auto">
-                    <a href="#booking" class="w-full sm:w-max bg-warnakedua hover:bg-warnaketiga text-black font-extrabold py-3.5 px-8 rounded-2xl shadow-lg uppercase tracking-widest text-[11px] transition flex items-center justify-center space-x-2">
-                        <span>Booking MC</span>
-                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                    </a>
-                    <a href="#profil" class="w-full sm:w-max border-2 border-gray-300 dark:border-gray-700 hover:border-warnakedua text-warnautama dark:text-white font-extrabold py-3.5 px-8 rounded-2xl uppercase tracking-widest text-[11px] transition flex items-center justify-center">
-                        Kenali Lead MC
-                    </a>
-                </div>
-            </div>
-
-            <div class="reveal relative flex justify-center w-full lg:justify-end h-full">
-                <div class="glass-glow p-8 w-full max-w-lg flex flex-col justify-center h-full">
-                    <div class="flex items-center space-x-4 mb-6">
-                        <div class="w-12 h-12 sm:w-14 sm:h-14 bg-warnakedua/20 rounded-2xl flex items-center justify-center text-warnakedua font-bold text-2xl shadow-inner border border-warnakedua/50">
-                            <svg class="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5-3c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
-                        </div>
-                        <div class="text-left">
-                            <h3 class="font-extrabold text-base sm:text-lg text-warnautama dark:text-white">Layanan Premium</h3>
-                            <p class="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider">Resmi, Interaktif, & Berpengalaman</p>
-                        </div>
+    <!-- ================= HALAMAN BERANDA ================= -->
+    <div id="hal-beranda" class="halaman-konten animate-fade-up w-full">
+        <!-- Hero Section -->
+        <section id="hero" class="px-5 md:px-10 pt-4 pb-12 relative z-10 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="reveal flex flex-col justify-center items-center lg:items-start text-center lg:text-left w-full mx-auto lg:mx-0">
+                    <div class="inline-flex items-center space-x-2 bg-warnakedua/10 border border-warnakedua/20 px-4 py-2 rounded-full text-[10px] md:text-xs font-bold text-warnakedua tracking-wide uppercase mb-6">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                        <span>Agency & Academy Master of Ceremony</span>
                     </div>
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-warnakeempat rounded-2xl border border-gray-200 dark:border-gray-800">
-                            <span class="flex items-center space-x-2 font-bold text-xs sm:text-sm text-warnautama dark:text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-warnakedua block"></span><span>Formal & Kenegaraan</span></span>
-                            <span class="text-black font-black text-[10px] bg-warnakedua px-2 py-1 rounded-lg uppercase">Top Tier</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-warnakeempat rounded-2xl border border-gray-200 dark:border-gray-800">
-                            <span class="flex items-center space-x-2 font-bold text-xs sm:text-sm text-warnautama dark:text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-warnakedua block"></span><span>Wedding & Resepsi</span></span>
-                            <span class="text-warnakedua font-black text-[10px] bg-warnakedua/10 px-2 py-1 rounded-lg uppercase">Available</span>
-                        </div>
-                        <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-warnakeempat rounded-2xl border border-gray-200 dark:border-gray-800">
-                            <span class="flex items-center space-x-2 font-bold text-xs sm:text-sm text-warnautama dark:text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-warnakedua block"></span><span>Bilingual (ID/EN)</span></span>
-                            <span class="text-warnakedua font-black text-[10px] bg-warnakedua/10 px-2 py-1 rounded-lg uppercase">Pro</span>
-                        </div>
+                    <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-warnautama dark:text-white leading-[1.2] mb-5 text-justify sm:text-left">
+                        WUJUDKAN ACARA BERKESAN & TINGKATKAN SKILL BERSAMA <span class="text-warnakedua">MC NUSANTARA</span>
+                    </h1>
+                    <p class="text-[11px] sm:text-xs md:text-sm text-gray-600 dark:text-gray-300 font-medium leading-relaxed max-w-lg mx-auto lg:mx-0 mb-8">
+                        Solusi profesional untuk memandu berbagai event Anda sekaligus wadah pelatihan public speaking eksklusif untuk mencetak talenta MC berkelas.
+                    </p>
+                    <div class="flex flex-col w-full sm:flex-row gap-3 sm:gap-4 sm:w-auto">
+                        <button onclick="bukaHalaman('booking')" class="w-full sm:w-max bg-warnakedua hover:bg-warnaketiga text-black font-extrabold py-3.5 px-8 rounded-2xl shadow-lg uppercase tracking-widest text-[11px] transition flex items-center justify-center space-x-2">
+                            <span>Booking MC</span>
+                            <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                        </button>
+                        <button onclick="bukaHalaman('pelatihan')" class="w-full sm:w-max border-2 border-warnakedua hover:bg-warnakedua text-warnautama dark:text-white hover:text-black font-extrabold py-3.5 px-8 rounded-2xl uppercase tracking-widest text-[11px] transition flex items-center justify-center space-x-2">
+                            <span>Ikut Pelatihan MC</span>
+                        </button>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Layanan MC -->
-    <section id="layanan" class="px-5 md:px-10 pt-8 pb-4 relative z-10 max-w-6xl mx-auto">
-        <div class="reveal text-center mb-8">
-            <h2 class="text-xl md:text-2xl font-black text-warnautama dark:text-white tracking-tight uppercase">Kategori Layanan</h2>
-            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">Pembawaan spesifik berstandar tinggi untuk acara Anda.</p>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
-            <div class="reveal glass-glow p-8 text-center sm:text-left flex flex-col justify-start group hover:shadow-2xl h-full">
-                <div class="w-14 h-14 bg-warnakedua/20 border border-warnakedua text-warnakedua rounded-2xl flex items-center justify-center mb-5 mx-auto sm:mx-0 shadow-inner group-hover:bg-warnakedua group-hover:text-black transition duration-300">
-                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-4.5-9L2 6v2h19V6l-9.5-5z"/></svg>
+                <div class="reveal relative flex justify-center w-full lg:justify-end h-full">
+                    <div class="glass-glow p-8 w-full max-w-lg flex flex-col justify-center h-full">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div class="w-12 h-12 sm:w-14 sm:h-14 bg-warnakedua/20 rounded-2xl flex items-center justify-center text-warnakedua font-bold text-2xl shadow-inner border border-warnakedua/50">
+                                <svg class="w-6 h-6 sm:w-7 sm:h-7 fill-current" viewBox="0 0 24 24"><path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5-3c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z"/></svg>
+                            </div>
+                            <div class="text-left">
+                                <h3 class="font-extrabold text-base sm:text-lg text-warnautama dark:text-white">Layanan Kami</h3>
+                                <p class="text-[10px] sm:text-xs text-gray-500 font-bold uppercase tracking-wider">Agency & Academy</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-warnakeempat rounded-2xl border border-gray-200 dark:border-gray-800">
+                                <span class="flex items-center space-x-2 font-bold text-xs sm:text-sm text-warnautama dark:text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-warnakedua block"></span><span>Formal & Kenegaraan</span></span>
+                                <span class="text-black font-black text-[10px] bg-warnakedua px-2 py-1 rounded-lg uppercase">Top Tier</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-warnakeempat rounded-2xl border border-gray-200 dark:border-gray-800">
+                                <span class="flex items-center space-x-2 font-bold text-xs sm:text-sm text-warnautama dark:text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-warnakedua block"></span><span>Wedding & Commercial</span></span>
+                                <span class="text-warnakedua font-black text-[10px] bg-warnakedua/10 px-2 py-1 rounded-lg uppercase">Available</span>
+                            </div>
+                            <div class="flex items-center justify-between p-4 bg-gray-50 dark:bg-warnakeempat rounded-2xl border border-gray-200 dark:border-gray-800">
+                                <span class="flex items-center space-x-2 font-bold text-xs sm:text-sm text-warnautama dark:text-gray-200"><span class="w-1.5 h-1.5 rounded-full bg-warnakedua block"></span><span>Pelatihan Public Speaking</span></span>
+                                <span class="text-warnakedua font-black text-[10px] bg-warnakedua/10 px-2 py-1 rounded-lg uppercase">Open Class</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <h3 class="text-base sm:text-lg font-extrabold mb-2 text-warnautama dark:text-white">Formal & Kenegaraan</h3>
-                <p class="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-4">Seminar nasional, wisuda, pelantikan, hingga peresmian instansi resmi dengan standar diksi protokoler.</p>
             </div>
-            <div class="reveal glass-glow p-8 text-center sm:text-left flex flex-col justify-start group hover:shadow-2xl h-full">
-                <div class="w-14 h-14 bg-warnakedua/20 border border-warnakedua text-warnakedua rounded-2xl flex items-center justify-center mb-5 mx-auto sm:mx-0 shadow-inner group-hover:bg-warnakedua group-hover:text-black transition duration-300">
-                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+        </section>
+
+        <!-- Layanan MC -->
+        <section id="layanan" class="px-5 md:px-10 pt-8 pb-4 relative z-10 max-w-7xl mx-auto">
+            <div class="reveal text-center mb-8">
+                <h2 class="text-xl md:text-2xl font-black text-warnautama dark:text-white tracking-tight uppercase">Kategori Layanan</h2>
+                <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400 mt-2 font-medium">Layanan agency profesional dan akademi public speaking.</p>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
+                <!-- Formal -->
+                <div class="reveal glass-glow p-6 md:p-8 text-center sm:text-left flex flex-col justify-start group hover:shadow-2xl h-full">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-warnakedua/20 border border-warnakedua text-warnakedua rounded-2xl flex items-center justify-center mb-5 mx-auto sm:mx-0 shadow-inner group-hover:bg-warnakedua group-hover:text-black transition duration-300">
+                        <svg class="w-6 h-6 md:w-7 md:h-7 fill-current" viewBox="0 0 24 24"><path d="M4 10v7h3v-7H4zm6 0v7h3v-7h-3zM2 22h19v-3H2v3zm14-12v7h3v-7h-3zm-4.5-9L2 6v2h19V6l-9.5-5z"/></svg>
+                    </div>
+                    <h3 class="text-sm md:text-base lg:text-lg font-extrabold mb-2 text-warnautama dark:text-white">Formal & Kenegaraan</h3>
+                    <p class="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-4">Seminar nasional, wisuda, pelantikan, hingga peresmian dengan standar diksi protokoler.</p>
                 </div>
-                <h3 class="text-base sm:text-lg font-extrabold mb-2 text-warnautama dark:text-white">Wedding & Resepsi</h3>
-                <p class="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-4">Dari kehidmatan akad nikah hingga kemegahan resepsi malam dengan tutur kata romantis dan hangat.</p>
-            </div>
-            <div class="reveal glass-glow p-8 text-center sm:text-left flex flex-col justify-start group hover:shadow-2xl h-full">
-                <div class="w-14 h-14 bg-warnakedua/20 border border-warnakedua text-warnakedua rounded-2xl flex items-center justify-center mb-5 mx-auto sm:mx-0 shadow-inner group-hover:bg-warnakedua group-hover:text-black transition duration-300">
-                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                <!-- Wedding -->
+                <div class="reveal glass-glow p-6 md:p-8 text-center sm:text-left flex flex-col justify-start group hover:shadow-2xl h-full">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-warnakedua/20 border border-warnakedua text-warnakedua rounded-2xl flex items-center justify-center mb-5 mx-auto sm:mx-0 shadow-inner group-hover:bg-warnakedua group-hover:text-black transition duration-300">
+                        <svg class="w-6 h-6 md:w-7 md:h-7 fill-current" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                    </div>
+                    <h3 class="text-sm md:text-base lg:text-lg font-extrabold mb-2 text-warnautama dark:text-white">Wedding & Resepsi</h3>
+                    <p class="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-4">Dari kehidmatan akad nikah hingga kemegahan resepsi malam dengan tutur kata romantis.</p>
                 </div>
-                <h3 class="text-base sm:text-lg font-extrabold mb-2 text-warnautama dark:text-white">Commercial Event</h3>
-                <p class="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-4">Gathering perusahaan, peluncuran produk, dan *talkshow* interaktif dengan energi yang menyatukan audiens.</p>
+                <!-- Commercial -->
+                <div class="reveal glass-glow p-6 md:p-8 text-center sm:text-left flex flex-col justify-start group hover:shadow-2xl h-full">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-warnakedua/20 border border-warnakedua text-warnakedua rounded-2xl flex items-center justify-center mb-5 mx-auto sm:mx-0 shadow-inner group-hover:bg-warnakedua group-hover:text-black transition duration-300">
+                        <svg class="w-6 h-6 md:w-7 md:h-7 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                    </div>
+                    <h3 class="text-sm md:text-base lg:text-lg font-extrabold mb-2 text-warnautama dark:text-white">Commercial Event</h3>
+                    <p class="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-4">Gathering perusahaan, peluncuran produk, dan talkshow interaktif dengan energi luar biasa.</p>
+                </div>
+                <!-- Pelatihan -->
+                <div class="reveal glass-glow p-6 md:p-8 text-center sm:text-left flex flex-col justify-start group hover:shadow-2xl h-full border-2 border-warnakedua/30">
+                    <div class="w-12 h-12 md:w-14 md:h-14 bg-warnakedua text-black rounded-2xl flex items-center justify-center mb-5 mx-auto sm:mx-0 shadow-md transform group-hover:scale-110 transition duration-300">
+                        <svg class="w-6 h-6 md:w-7 md:h-7 fill-current" viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+                    </div>
+                    <h3 class="text-sm md:text-base lg:text-lg font-extrabold mb-2 text-warnautama dark:text-white">Pelatihan MC & PS</h3>
+                    <p class="text-[11px] sm:text-xs text-gray-600 dark:text-gray-400 font-medium leading-relaxed mb-4">Kelas eksklusif Public Speaking untuk mencetak talenta MC berkelas dari pemula hingga Pro.</p>
+                    <button onclick="bukaHalaman('pelatihan')" class="mt-auto text-warnakedua text-[10px] md:text-[11px] font-bold uppercase tracking-widest hover:underline text-center sm:text-left w-max mx-auto sm:mx-0">Daftar Kelas &rarr;</button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Galeri Portofolio -->
-    <section class="pt-12 relative z-10 w-full overflow-hidden">
-        <div class="reveal px-5 md:px-10 mb-6 flex items-center justify-center text-center">
-            <h2 class="text-xl md:text-2xl font-black text-warnautama dark:text-white tracking-tight uppercase">Galeri Panggung</h2>
-        </div>
-        
-        <div id="scroll-galeri" class="reveal flex flex-row overflow-x-auto gap-4 md:gap-5 px-5 md:px-10 pb-6 no-scrollbar hover:cursor-grab active:cursor-grabbing items-stretch" style="-webkit-overflow-scrolling: touch;">
-            <div class="w-[240px] min-w-[240px] md:w-[280px] md:min-w-[280px] flex-shrink-0 group glass-glow rounded-[1.5rem] p-4 transition-all duration-300 flex flex-col h-auto hover:-translate-y-2 border-t-4 border-warnakedua">
-                <img src="foto/seminar.png" loading="lazy" alt="Dokumentasi Seminar Nasional" class="w-full h-36 md:h-40 object-cover rounded-xl shadow-sm mb-4 bg-gray-200 dark:bg-gray-800" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="w-full h-36 md:h-40 bg-gray-200 dark:bg-gray-800 rounded-xl mb-4 flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/seminar.png</span></div>
-                <p class="text-[9px] font-black text-warnakedua uppercase tracking-widest mb-1 text-center">Formal Event</p>
-                <h4 class="font-extrabold text-[12px] md:text-sm text-warnautama dark:text-white text-center">Seminar Nasional</h4>
+        <!-- Galeri Portofolio -->
+        <section class="pt-12 relative z-10 w-full overflow-hidden">
+            <div class="reveal px-5 md:px-10 mb-6 flex items-center justify-center text-center">
+                <h2 class="text-xl md:text-2xl font-black text-warnautama dark:text-white tracking-tight uppercase">Galeri Panggung</h2>
             </div>
-
-            <div class="w-[240px] min-w-[240px] md:w-[280px] md:min-w-[280px] flex-shrink-0 group glass-glow rounded-[1.5rem] p-4 transition-all duration-300 flex flex-col h-auto hover:-translate-y-2 border-t-4 border-warnakedua">
-                <img src="foto/wedding.png" loading="lazy" alt="Dokumentasi Akad dan Resepsi" class="w-full h-36 md:h-40 object-cover rounded-xl shadow-sm mb-4 bg-gray-200 dark:bg-gray-800" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="w-full h-36 md:h-40 bg-gray-200 dark:bg-gray-800 rounded-xl mb-4 flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/wedding.png</span></div>
-                <p class="text-[9px] font-black text-warnakedua uppercase tracking-widest mb-1 text-center">Wedding Event</p>
-                <h4 class="font-extrabold text-[12px] md:text-sm text-warnautama dark:text-white text-center">Akad & Resepsi</h4>
-            </div>
-
-            <div class="w-[240px] min-w-[240px] md:w-[280px] md:min-w-[280px] flex-shrink-0 group glass-glow rounded-[1.5rem] p-4 transition-all duration-300 flex flex-col h-auto hover:-translate-y-2 border-t-4 border-warnakedua">
-                <img src="foto/corporate.png" loading="lazy" alt="Dokumentasi Corporate Gathering" class="w-full h-36 md:h-40 object-cover rounded-xl shadow-sm mb-4 bg-gray-200 dark:bg-gray-800" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="w-full h-36 md:h-40 bg-gray-200 dark:bg-gray-800 rounded-xl mb-4 flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/corporate.png</span></div>
-                <p class="text-[9px] font-black text-warnakedua uppercase tracking-widest mb-1 text-center">Company Event</p>
-                <h4 class="font-extrabold text-[12px] md:text-sm text-warnautama dark:text-white text-center">Corporate Gathering</h4>
-            </div>
-
-            <div class="w-[240px] min-w-[240px] md:w-[280px] md:min-w-[280px] flex-shrink-0 group glass-glow rounded-[1.5rem] p-4 transition-all duration-300 flex flex-col h-auto hover:-translate-y-2 border-t-4 border-warnakedua">
-                <img src="foto/commercial.png" loading="lazy" alt="Dokumentasi Commercial Launching" class="w-full h-36 md:h-40 object-cover rounded-xl shadow-sm mb-4 bg-gray-200 dark:bg-gray-800" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="w-full h-36 md:h-40 bg-gray-200 dark:bg-gray-800 rounded-xl mb-4 flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/commercial.png</span></div>
-                <p class="text-[9px] font-black text-warnakedua uppercase tracking-widest mb-1 text-center">Brand Event</p>
-                <h4 class="font-extrabold text-[12px] md:text-sm text-warnautama dark:text-white text-center">Commercial Launching</h4>
-            </div>
-        </div>
-
-        <div class="reveal flex justify-center mt-2 px-5">
-             <a href="https://instagram.com/mc.nusantaraa" target="_blank" class="group border-2 border-gray-300 dark:border-gray-700 hover:border-warnakedua text-warnautama dark:text-white font-extrabold py-3.5 px-8 rounded-2xl uppercase tracking-widest text-[11px] transition flex items-center justify-center gap-2.5 shadow-sm">
-                  <svg class="w-4 h-4 fill-current group-hover:text-warnakedua transition-colors" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                  <span>Selengkapnya</span>
-                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-             </a>
-        </div>
-    </section>
-
-    <!-- Profil MC -->
-    <section id="profil" class="px-5 md:px-10 pt-12 pb-10 relative z-10 max-w-4xl mx-auto">
-        <div class="reveal glass-glow p-8 md:p-14 text-center border-t-4 border-warnakedua">
-            <h2 class="text-xl md:text-2xl font-black text-warnautama dark:text-white tracking-tight uppercase mb-2">Lead Master of Ceremony</h2>
-            <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-warnakedua mb-6">Fistra Deka Elvira</h3>
             
-            <div class="w-48 sm:w-56 md:w-64 mx-auto rounded-[2rem] overflow-hidden shadow-xl border border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 aspect-square relative mb-6 group transform transition-transform">
-                <img src="foto/mc.png" alt="Fistra Deka Elvira" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-                <div class="w-full h-full flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/mc.png</span></div>
-            </div>
-
-            <p class="text-[11px] sm:text-xs md:text-sm text-gray-700 dark:text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto mb-8">
-                Sebagai figur utama dan Founder dari <strong class="text-warnakedua">@mc.nusantaraa</strong>, Fistra menghadirkan dedikasi penuh di setiap panggung. Menguasai manajemen audiens, intonasi vokal, dan penyesuaian *tone* acara.
-            </p>
-
-             <!-- Dua Kotak Info (Founder & Professional) -->
-            <div class="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-lg mx-auto mb-6">
-                <div class="flex-1 bg-gray-50 dark:bg-warnakeempat p-5 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-inner flex flex-col justify-center items-center">
-                    <span class="block text-sm sm:text-base font-black text-warnautama dark:text-white mb-1">Founder & CEO</span>
-                    <span class="text-[10px] sm:text-xs text-warnakedua font-bold tracking-widest uppercase text-center">@mc.nusantaraa</span>
+            <div id="scroll-galeri" class="reveal flex flex-row overflow-x-auto gap-4 md:gap-5 px-5 md:px-10 pb-6 no-scrollbar hover:cursor-grab active:cursor-grabbing items-stretch" style="-webkit-overflow-scrolling: touch;">
+                <div class="w-[240px] min-w-[240px] md:w-[280px] md:min-w-[280px] flex-shrink-0 group glass-glow rounded-[1.5rem] p-4 transition-all duration-300 flex flex-col h-auto hover:-translate-y-2 border-t-4 border-warnakedua">
+                    <img src="foto/seminar.png" loading="lazy" alt="Dokumentasi Seminar Nasional" class="w-full h-36 md:h-40 object-cover rounded-xl shadow-sm mb-4 bg-gray-200 dark:bg-gray-800" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-36 md:h-40 bg-gray-200 dark:bg-gray-800 rounded-xl mb-4 flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/seminar.png</span></div>
+                    <p class="text-[9px] font-black text-warnakedua uppercase tracking-widest mb-1 text-center">Formal Event</p>
+                    <h4 class="font-extrabold text-[12px] md:text-sm text-warnautama dark:text-white text-center">Seminar Nasional</h4>
                 </div>
-                <div class="flex-1 bg-gray-50 dark:bg-warnakeempat p-5 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-inner flex flex-col justify-center items-center">
-                    <span class="block text-sm sm:text-base font-black text-warnautama dark:text-white mb-1">Professional</span>
-                    <span class="text-[9px] sm:text-[10px] md:text-[11px] text-warnakedua font-bold tracking-widest uppercase text-center leading-tight">Profesional MC, Voice Over, & Muse</span>
+
+                <div class="w-[240px] min-w-[240px] md:w-[280px] md:min-w-[280px] flex-shrink-0 group glass-glow rounded-[1.5rem] p-4 transition-all duration-300 flex flex-col h-auto hover:-translate-y-2 border-t-4 border-warnakedua">
+                    <img src="foto/wedding.png" loading="lazy" alt="Dokumentasi Akad dan Resepsi" class="w-full h-36 md:h-40 object-cover rounded-xl shadow-sm mb-4 bg-gray-200 dark:bg-gray-800" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-36 md:h-40 bg-gray-200 dark:bg-gray-800 rounded-xl mb-4 flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/wedding.png</span></div>
+                    <p class="text-[9px] font-black text-warnakedua uppercase tracking-widest mb-1 text-center">Wedding Event</p>
+                    <h4 class="font-extrabold text-[12px] md:text-sm text-warnautama dark:text-white text-center">Akad & Resepsi</h4>
+                </div>
+
+                <div class="w-[240px] min-w-[240px] md:w-[280px] md:min-w-[280px] flex-shrink-0 group glass-glow rounded-[1.5rem] p-4 transition-all duration-300 flex flex-col h-auto hover:-translate-y-2 border-t-4 border-warnakedua">
+                    <img src="foto/corporate.png" loading="lazy" alt="Dokumentasi Corporate Gathering" class="w-full h-36 md:h-40 object-cover rounded-xl shadow-sm mb-4 bg-gray-200 dark:bg-gray-800" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-36 md:h-40 bg-gray-200 dark:bg-gray-800 rounded-xl mb-4 flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/corporate.png</span></div>
+                    <p class="text-[9px] font-black text-warnakedua uppercase tracking-widest mb-1 text-center">Company Event</p>
+                    <h4 class="font-extrabold text-[12px] md:text-sm text-warnautama dark:text-white text-center">Corporate Gathering</h4>
+                </div>
+
+                <div class="w-[240px] min-w-[240px] md:w-[280px] md:min-w-[280px] flex-shrink-0 group glass-glow rounded-[1.5rem] p-4 transition-all duration-300 flex flex-col h-auto hover:-translate-y-2 border-t-4 border-warnakedua">
+                    <img src="foto/commercial.png" loading="lazy" alt="Dokumentasi Commercial Launching" class="w-full h-36 md:h-40 object-cover rounded-xl shadow-sm mb-4 bg-gray-200 dark:bg-gray-800" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-36 md:h-40 bg-gray-200 dark:bg-gray-800 rounded-xl mb-4 flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/commercial.png</span></div>
+                    <p class="text-[9px] font-black text-warnakedua uppercase tracking-widest mb-1 text-center">Brand Event</p>
+                    <h4 class="font-extrabold text-[12px] md:text-sm text-warnautama dark:text-white text-center">Commercial Launching</h4>
                 </div>
             </div>
 
-            <!-- Tombol Selengkapnya ke Portofolio Pribadi -->
-            <div class="flex justify-center w-full max-w-lg mx-auto">
-                <a href="https://fistrae.mediatulisanmanusia.com" target="_blank" class="w-full group bg-warnakedua hover:bg-warnaketiga text-black font-extrabold py-3.5 px-6 rounded-2xl shadow-md uppercase tracking-widest text-[10px] md:text-xs transition flex items-center justify-center gap-2 text-center">
-                    <span>Selengkapnya</span>
-                    <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                </a>
+            <div class="reveal flex justify-center mt-2 px-5">
+                 <a href="https://instagram.com/mc.nusantaraa" target="_blank" class="group border-2 border-gray-300 dark:border-gray-700 hover:border-warnakedua text-warnautama dark:text-white font-extrabold py-3.5 px-8 rounded-2xl uppercase tracking-widest text-[11px] transition flex items-center justify-center gap-2.5 shadow-sm">
+                      <svg class="w-4 h-4 fill-current group-hover:text-warnakedua transition-colors" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                      <span>Selengkapnya</span>
+                      <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Stats -->
-    <section class="py-8 relative z-10 w-full">
-        <div class="reveal max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-            <div class="glass-glow p-5"><h4 class="text-2xl sm:text-3xl font-black text-warnakedua">100+</h4><p class="text-[10px] font-bold text-gray-500 uppercase mt-1">Acara Dipandu</p></div>
-            <div class="glass-glow p-5"><h4 class="text-2xl sm:text-3xl font-black text-warnakedua">100%</h4><p class="text-[10px] font-bold text-gray-500 uppercase mt-1">Klien Puas</p></div>
-            <div class="glass-glow p-5"><h4 class="text-2xl sm:text-3xl font-black text-warnakedua">24/7</h4><p class="text-[10px] font-bold text-gray-500 uppercase mt-1">Respon Cepat</p></div>
-            <div class="glass-glow p-5"><h4 class="text-2xl sm:text-3xl font-black text-warnakedua">Pro</h4><p class="text-[10px] font-bold text-gray-500 uppercase mt-1">Berpengalaman</p></div>
-        </div>
-    </section>
+        <!-- Profil MC -->
+        <section id="profil" class="px-5 md:px-10 pt-12 pb-10 relative z-10 max-w-4xl mx-auto">
+            <div class="reveal glass-glow p-8 md:p-14 text-center border-t-4 border-warnakedua">
+                <h2 class="text-xl md:text-2xl font-black text-warnautama dark:text-white tracking-tight uppercase mb-2">Lead Master of Ceremony</h2>
+                <h3 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-warnakedua mb-6">Fistra Deka Elvira</h3>
+                
+                <div class="w-48 sm:w-56 md:w-64 mx-auto rounded-[2rem] overflow-hidden shadow-xl border border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 aspect-square relative mb-6 group transform transition-transform">
+                    <img src="foto/mc.png" alt="Fistra Deka Elvira" class="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                    <div class="w-full h-full flex items-center justify-center hidden"><span class="text-[10px] text-gray-500 font-bold uppercase tracking-widest">foto/mc.png</span></div>
+                </div>
 
-    <!-- Form Booking -->
-    <section id="booking" class="px-5 md:px-10 pt-12 pb-16 relative z-10 max-w-4xl mx-auto">
-        <div class="reveal glass-glow p-8 md:p-14">
-            <h2 class="text-xl md:text-2xl font-black text-warnautama dark:text-white tracking-tight uppercase text-center mb-2">Formulir Reservasi</h2>
+                <p class="text-[11px] sm:text-xs md:text-sm text-gray-700 dark:text-gray-300 font-medium leading-relaxed max-w-2xl mx-auto mb-8">
+                    Sebagai figur utama dan Founder dari <strong class="text-warnakedua">@mc.nusantaraa</strong>, Fistra menghadirkan dedikasi penuh di setiap panggung. Menguasai manajemen audiens, intonasi vokal, dan penyesuaian tone acara.
+                </p>
+
+                 <!-- Dua Kotak Info -->
+                <div class="flex flex-col sm:flex-row justify-center gap-4 w-full max-w-lg mx-auto mb-6">
+                    <div class="flex-1 bg-gray-50 dark:bg-warnakeempat p-5 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-inner flex flex-col justify-center items-center">
+                        <span class="block text-sm sm:text-base font-black text-warnautama dark:text-white mb-1">Founder & CEO</span>
+                        <span class="text-[10px] sm:text-xs text-warnakedua font-bold tracking-widest uppercase text-center">@mc.nusantaraa</span>
+                    </div>
+                    <div class="flex-1 bg-gray-50 dark:bg-warnakeempat p-5 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-inner flex flex-col justify-center items-center">
+                        <span class="block text-sm sm:text-base font-black text-warnautama dark:text-white mb-1">Professional</span>
+                        <span class="text-[9px] sm:text-[10px] md:text-[11px] text-warnakedua font-bold tracking-widest uppercase text-center leading-tight">MC, Voice Over, & Muse</span>
+                    </div>
+                </div>
+
+                <!-- Tombol Selengkapnya ke Portofolio -->
+                <div class="flex justify-center w-full max-w-lg mx-auto">
+                    <a href="https://fistrae.mediatulisanmanusia.com" target="_blank" class="w-full group bg-warnakedua hover:bg-warnaketiga text-black font-extrabold py-3.5 px-6 rounded-2xl shadow-md uppercase tracking-widest text-[10px] md:text-xs transition flex items-center justify-center gap-2 text-center">
+                        <span>Selengkapnya</span>
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="py-8 relative z-10 w-full mb-10">
+            <div class="reveal max-w-5xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="glass-glow p-5"><h4 class="text-2xl sm:text-3xl font-black text-warnakedua">100+</h4><p class="text-[10px] font-bold text-gray-500 uppercase mt-1">Acara Dipandu</p></div>
+                <div class="glass-glow p-5"><h4 class="text-2xl sm:text-3xl font-black text-warnakedua">100%</h4><p class="text-[10px] font-bold text-gray-500 uppercase mt-1">Klien Puas</p></div>
+                <div class="glass-glow p-5"><h4 class="text-2xl sm:text-3xl font-black text-warnakedua">24/7</h4><p class="text-[10px] font-bold text-gray-500 uppercase mt-1">Respon Cepat</p></div>
+                <div class="glass-glow p-5"><h4 class="text-2xl sm:text-3xl font-black text-warnakedua">Pro</h4><p class="text-[10px] font-bold text-gray-500 uppercase mt-1">Berpengalaman</p></div>
+            </div>
+        </section>
+    </div>
+
+
+    <!-- ================= HALAMAN FORM BOOKING MC ================= -->
+    <div id="hal-booking" class="halaman-konten hidden w-full px-5 md:px-10 pt-4 pb-16 relative z-10 max-w-4xl mx-auto">
+        <button onclick="bukaHalaman('beranda')" class="mb-6 flex items-center gap-2 text-xs sm:text-sm font-bold glass-glow px-5 py-2.5 rounded-full transition hover:text-warnakedua w-max">
+            &larr; Kembali ke Beranda
+        </button>
+        <div class="glass-glow p-8 md:p-14 border-t-4 border-warnakedua">
+            <h2 class="text-xl md:text-3xl font-black text-warnautama dark:text-white tracking-tight uppercase text-center mb-2">Formulir Booking MC</h2>
             <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-8 font-medium text-center border-b border-gray-200 dark:border-gray-800 pb-6">Lengkapi detail untuk pemesanan jasa MC profesional.</p>
             
             <form id="bookingForm" class="space-y-5 text-left">
@@ -370,15 +390,66 @@
                 </div>
 
                 <button type="submit" class="w-full bg-warnakedua hover:bg-warnaketiga text-black font-black py-4 rounded-2xl shadow-lg uppercase tracking-widest text-xs sm:text-sm hover:-translate-y-1 transition duration-300 mt-6 transform-gpu">
-                    BOOKING
+                    KIRIM BOOKING VIA WHATSAPP
                 </button>
             </form>
         </div>
-    </section>
+    </div>
 
-    <!-- FOOTER -->
+
+    <!-- ================= HALAMAN FORM PELATIHAN ================= -->
+    <div id="hal-pelatihan" class="halaman-konten hidden w-full px-5 md:px-10 pt-4 pb-16 relative z-10 max-w-4xl mx-auto">
+        <button onclick="bukaHalaman('beranda')" class="mb-6 flex items-center gap-2 text-xs sm:text-sm font-bold glass-glow px-5 py-2.5 rounded-full transition hover:text-warnakedua w-max">
+            &larr; Kembali ke Beranda
+        </button>
+        <div class="glass-glow p-8 md:p-14 border-t-4 border-warnautama dark:border-white">
+            <h2 class="text-xl md:text-3xl font-black text-warnautama dark:text-white tracking-tight uppercase text-center mb-2">Formulir Pelatihan MC</h2>
+            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400 mb-8 font-medium text-center border-b border-gray-200 dark:border-gray-800 pb-6">Daftarkan diri Anda di kelas eksklusif Public Speaking & MC.</p>
+            
+            <form id="pelatihanForm" class="space-y-5 text-left">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 ml-2 uppercase">Nama Lengkap</label>
+                        <input type="text" id="p_nama" required placeholder="Sesuai KTP / Identitas" class="w-full bg-white/70 dark:bg-black/40 border border-gray-300 dark:border-gray-700 rounded-2xl p-3.5 text-xs sm:text-sm font-medium text-warnautama dark:text-white focus:outline-none focus:border-warnakedua">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 ml-2 uppercase">Usia</label>
+                        <input type="number" id="p_usia" required placeholder="Cth: 20" class="w-full bg-white/70 dark:bg-black/40 border border-gray-300 dark:border-gray-700 rounded-2xl p-3.5 text-xs sm:text-sm font-medium text-warnautama dark:text-white focus:outline-none focus:border-warnakedua">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <div>
+                        <label class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 ml-2 uppercase">Domisili / Kota</label>
+                        <input type="text" id="p_domisili" required placeholder="Cth: Malang, Jawa Timur" class="w-full bg-white/70 dark:bg-black/40 border border-gray-300 dark:border-gray-700 rounded-2xl p-3.5 text-xs sm:text-sm font-medium text-warnautama dark:text-white focus:outline-none focus:border-warnakedua">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 ml-2 uppercase">Pengalaman MC</label>
+                        <select id="p_pengalaman" required class="w-full bg-white/70 dark:bg-black/40 border border-gray-300 dark:border-gray-700 rounded-2xl p-3.5 text-xs sm:text-sm font-medium text-warnautama dark:text-white focus:outline-none focus:border-warnakedua appearance-none cursor-pointer">
+                            <option value="" disabled selected>-- Pilih Pengalaman --</option>
+                            <option value="Belum Pernah">Belum Pernah (Pemula)</option>
+                            <option value="Pernah Beberapa Kali">Pernah Beberapa Kali</option>
+                            <option value="Sudah Sering / Profesional">Sudah Sering / Profesional</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-[10px] sm:text-xs font-bold text-gray-700 dark:text-gray-300 mb-1 ml-2 uppercase">Motivasi & Harapan Mengikuti Kelas</label>
+                    <textarea id="p_motivasi" rows="3" required placeholder="Apa yang ingin Anda kuasai setelah ikut kelas ini?" class="w-full bg-white/70 dark:bg-black/40 border border-gray-300 dark:border-gray-700 rounded-2xl p-3.5 text-xs sm:text-sm font-medium text-warnautama dark:text-white focus:outline-none focus:border-warnakedua"></textarea>
+                </div>
+
+                <button type="submit" class="w-full bg-warnautama dark:bg-white text-white dark:text-black font-black py-4 rounded-2xl shadow-lg uppercase tracking-widest text-xs sm:text-sm hover:-translate-y-1 transition duration-300 mt-6 transform-gpu border-2 border-transparent hover:border-warnakedua">
+                    KIRIM PENDAFTARAN VIA WHATSAPP
+                </button>
+            </form>
+        </div>
+    </div>
+
+
+    <!-- FOOTER GLOBAL -->
     <footer class="mt-12 px-4 sm:px-6 pt-6 pb-12 bg-white/90 dark:bg-[#111111]/90 backdrop-blur-xl text-center relative z-10 rounded-t-[3rem] shadow-[0_-10px_40px_rgba(0,0,0,0.05)] border-t border-gray-200 dark:border-[#222]">
-        <div class="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto reveal">
+        <div class="relative z-10 flex flex-col items-center w-full max-w-4xl mx-auto">
             
             <img src="foto/logo.png" loading="lazy" alt="Logo MC Nusantara" class="w-36 sm:w-44 h-auto object-contain mb-2 bg-transparent" onerror="this.style.display='none';">
             
@@ -386,11 +457,11 @@
             
             <h4 class="font-bold text-sm sm:text-base text-warnautama dark:text-white mb-2">TENTANG KAMI</h4>
             <p class="text-[10px] sm:text-xs md:text-sm text-gray-800 dark:text-gray-300 leading-relaxed mb-6 max-w-xl mx-auto font-medium text-center px-4">
-                MC Nusantara merupakan agensi penyedia layanan Master of Ceremony profesional yang berdedikasi mengangkat standar public speaking ke tingkat yang lebih elegan dan terstruktur. Kami menjamin setiap momen berharga Anda dikawal dengan pembawaan kelas atas.
+                MC Nusantara merupakan agensi penyedia layanan Master of Ceremony profesional dan akademi Pelatihan Public Speaking yang berdedikasi mengangkat standar komunikasi ke tingkat yang lebih elegan dan terstruktur.
             </p>
             
             <div class="flex flex-row flex-wrap items-center justify-center w-full gap-3 sm:gap-6 text-[9px] sm:text-xs md:text-sm font-bold text-warnautama dark:text-gray-300 mb-6">
-                <a href="#beranda" class="hover:text-warnakedua transition">Beranda</a>
+                <button onclick="bukaHalaman('beranda')" class="hover:text-warnakedua transition">Beranda</button>
                 <button onclick="bukaModal('modalSyarat')" class="hover:text-warnakedua transition font-bold">Syarat & Ketentuan</button>
                 <button onclick="bukaModal('modalPrivasi')" class="hover:text-warnakedua transition font-bold">Kebijakan Privasi</button>
                 <button onclick="bukaModal('modalKontak')" class="hover:text-warnakedua transition font-bold">Hubungi Kami</button>
@@ -436,12 +507,27 @@
             </div>
             
             <div id="chat-messages" class="flex-grow overflow-y-auto p-4 space-y-2 bg-transparent text-sm flex flex-col chat-scrollbar relative">
+                
+                <!-- CHATBOT GREETING DENGAN 2 TOMBOL PILIHAN -->
                 <div class="flex items-start gap-2 mt-auto shrink-0">
                     <img src="foto/mc.png" class="w-7 h-7 rounded-full flex-shrink-0 object-cover object-top shadow-sm border border-gray-200 bg-white" onerror="this.style.display='none';">
-                    <div class="bg-gray-100 dark:bg-[#222] text-gray-800 dark:text-gray-200 px-4 py-3 rounded-2xl rounded-tr-sm max-w-[85%] shadow-sm border border-gray-200 dark:border-gray-700 leading-relaxed font-medium text-[11px] sm:text-xs">
-                        Halo! Selamat datang di layanan <strong class="text-warnakedua">MC Nusantara</strong>.<br><br>Ada yang bisa saya bantu untuk persiapan acara spesial Anda?
+                    <div class="flex flex-col gap-2 max-w-[85%]">
+                        <div class="bg-gray-100 dark:bg-[#222] text-gray-800 dark:text-gray-200 px-4 py-3 rounded-2xl rounded-tr-sm shadow-sm border border-gray-200 dark:border-gray-700 leading-relaxed font-medium text-[11px] sm:text-xs">
+                            Halo! Selamat datang di <strong class="text-warnakedua">MC Nusantara</strong>.<br><br>Silakan pilih informasi layanan yang Anda butuhkan:
+                        </div>
+                        <div class="flex flex-col gap-1.5">
+                            <button onclick="pilihTopikBot('booking')" class="bg-white dark:bg-[#111] border border-warnakedua text-warnautama dark:text-white px-3 py-2 rounded-xl text-[10px] sm:text-[11px] font-bold shadow-sm hover:bg-warnakedua hover:text-black transition text-left w-full flex items-center justify-between group">
+                                <span>🎯 Booking MC Acara</span>
+                                <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform text-warnakedua group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            <button onclick="pilihTopikBot('pelatihan')" class="bg-white dark:bg-[#111] border border-warnakedua text-warnautama dark:text-white px-3 py-2 rounded-xl text-[10px] sm:text-[11px] font-bold shadow-sm hover:bg-warnakedua hover:text-black transition text-left w-full flex items-center justify-between group">
+                                <span>🎤 Pelatihan MC</span>
+                                <svg class="w-3 h-3 group-hover:translate-x-1 transition-transform text-warnakedua group-hover:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
+
                 <div id="typing-indicator" class="hidden items-start gap-2 mt-3 shrink-0">
                     <img src="foto/mc.png" class="w-7 h-7 rounded-full flex-shrink-0 object-cover object-top shadow-sm border border-gray-200 bg-white" onerror="this.style.display='none';">
                     <div class="bg-gray-100 dark:bg-[#222] px-4 py-3 rounded-2xl rounded-tr-sm shadow-sm border border-gray-200 dark:border-gray-700 flex items-center h-9 typing-indicator">
@@ -483,10 +569,10 @@
             <button onclick="tutupModal('modalSyarat')" class="absolute top-5 right-6 text-gray-400 hover:text-red-500 font-bold text-3xl">&times;</button>
             <h3 class="text-xl font-black text-warnautama dark:text-white border-b border-gray-200 dark:border-gray-700 pb-3 mb-5">Syarat & Ketentuan</h3>
             <div class="space-y-4 text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
-                <p>1. <strong>Reservasi Valid:</strong> Pemesanan dinyatakan resmi setelah kami memverifikasi jadwal dan Anda menyelesaikan administrasi (DP).</p>
+                <p>1. <strong>Reservasi Valid:</strong> Pemesanan MC & Pelatihan dinyatakan resmi setelah kami memverifikasi jadwal dan penyelesaian administrasi.</p>
                 <p>2. <strong>Koordinasi Teknis:</strong> Klien berhak atas sesi *technical meeting* (online/offline) untuk mematangkan *rundown* acara.</p>
-                <p>3. <strong>Perubahan Jadwal:</strong> Jika terjadi perubahan waktu/tanggal (reschedule), mohon diinformasikan maksimal H-7.</p>
-                <p>4. <strong>Pembatalan Sepihak:</strong> Pembatalan acara secara sepihak mengakibatkan biaya bersifat *non-refundable*.</p>
+                <p>3. <strong>Perubahan Jadwal:</strong> Jika terjadi perubahan waktu/tanggal, mohon diinformasikan maksimal H-7.</p>
+                <p>4. <strong>Pembatalan Sepihak:</strong> Pembatalan acara atau kelas secara sepihak mengakibatkan biaya bersifat *non-refundable*.</p>
             </div>
         </div>
     </div>
@@ -497,7 +583,7 @@
             <h3 class="text-xl font-black text-warnautama dark:text-white border-b border-gray-200 dark:border-gray-700 pb-3 mb-5">Kebijakan Privasi</h3>
             <div class="space-y-4 text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-relaxed font-medium">
                 <p>Privasi Anda adalah komitmen utama kami. Kami menerapkan perlindungan terhadap data Anda.</p>
-                <p><strong>Penggunaan Data:</strong> Nama instansi, detail acara, dan kontak hanya digunakan untuk kebutuhan penyusunan *rundown* dan invoice.</p>
+                <p><strong>Penggunaan Data:</strong> Nama instansi, detail acara, dan kontak hanya digunakan untuk kebutuhan penyusunan *rundown* dan sertifikat pelatihan.</p>
                 <p><strong>Kerahasiaan Mutlak:</strong> Kami tidak pernah menjual atau membagikan detail privasi klien kepada pihak ketiga.</p>
             </div>
         </div>
@@ -524,13 +610,27 @@
     <script>
         if (localStorage.getItem("theme") === "dark") document.documentElement.classList.add("dark");
 
+        // FUNGSI BERPINDAH HALAMAN (VIRTUAL PAGES)
+        function bukaHalaman(id) {
+            document.querySelectorAll('.halaman-konten').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('animate-fade-up');
+            });
+            const target = document.getElementById('hal-' + id);
+            if(target) {
+                target.classList.remove('hidden');
+                void target.offsetWidth; 
+                target.classList.add('animate-fade-up');
+            }
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
         document.addEventListener("DOMContentLoaded", function() {
             
-            // 1. OPTIMASI ANIMASI REVEAL DENGAN INTERSECTION OBSERVER
-            // Jauh lebih ringan dari pada window.addEventListener("scroll")
+            // 1. OPTIMASI ANIMASI REVEAL
             const reveals = document.querySelectorAll(".reveal");
             const revealOptions = {
-                threshold: 0.1, // Muncul ketika 10% elemen terlihat
+                threshold: 0.1, 
                 rootMargin: "0px 0px -50px 0px"
             };
 
@@ -538,7 +638,6 @@
                 entries.forEach(entry => {
                     if (!entry.isIntersecting) return;
                     entry.target.classList.add("active");
-                    // Berhenti memantau setelah elemen muncul agar memori lega
                     observer.unobserve(entry.target);
                 });
             }, revealOptions);
@@ -547,7 +646,7 @@
                 revealObserver.observe(reveal);
             });
 
-            // 2. CHATBOT LOGIC
+            // 2. CHATBOT LOGIC (UPDATE TERBARU)
             const t = document.getElementById("chat-trigger");
             const w = document.getElementById("chat-window");
             const cx = document.getElementById("close-chat");
@@ -574,7 +673,6 @@
 
             ci.addEventListener('input', function() { this.style.height = '42px'; this.style.height = (this.scrollHeight) + 'px'; });
 
-            let sudahDisapa = false;
             let timerTanyaMasiAda; let timerAkhiriChat;
 
             function addMessageToUI(text, sender) {
@@ -597,46 +695,55 @@
                 }, 30000);
             }
 
+            // Fungsi saat pengguna klik tombol Pilihan di Chatbot
+            window.pilihTopikBot = function(topik) {
+                clearTimeout(timerTanyaMasiAda); clearTimeout(timerAkhiriChat);
+                
+                if (topik === 'booking') {
+                    addMessageToUI("Booking MC Acara", "user");
+                    ti.classList.remove("hidden"); ti.classList.add("flex"); cm.scrollTo({ top: cm.scrollHeight, behavior: 'smooth' });
+                    setTimeout(() => {
+                        ti.classList.add("hidden"); ti.classList.remove("flex");
+                        const reply = `Untuk reservasi MC, kami melayani acara Formal, Wedding, hingga Commercial Event.<br><br>Silakan isi detail acara Anda melalui formulir berikut:<br><button onclick="document.getElementById('close-chat').click(); bukaHalaman('booking');" class="mt-3 w-full bg-warnakedua text-black font-extrabold py-2 rounded-xl text-[10px] uppercase tracking-wider hover:scale-[1.02] transition shadow-md">📋 Isi Form Booking</button>`;
+                        addMessageToUI(reply, "model");
+                        resetTimerChat();
+                    }, 800);
+                } else if (topik === 'pelatihan') {
+                    addMessageToUI("Pelatihan MC", "user");
+                    ti.classList.remove("hidden"); ti.classList.add("flex"); cm.scrollTo({ top: cm.scrollHeight, behavior: 'smooth' });
+                    setTimeout(() => {
+                        ti.classList.add("hidden"); ti.classList.remove("flex");
+                        const reply = `Kami membuka kelas Pelatihan Public Speaking & MC eksklusif untuk mencetak talenta MC berkelas.<br><br>Silakan daftar melalui formulir berikut:<br><button onclick="document.getElementById('close-chat').click(); bukaHalaman('pelatihan');" class="mt-3 w-full bg-warnakedua text-black font-extrabold py-2 rounded-xl text-[10px] uppercase tracking-wider hover:scale-[1.02] transition shadow-md">🎓 Form Pelatihan</button>`;
+                        addMessageToUI(reply, "model");
+                        resetTimerChat();
+                    }, 800);
+                }
+            };
+
+            // Fungsi saat pengguna mengetik teks manual bebas (Otomatis diarahkan ke WA)
             function handleSend() {
                 const text = ci.value.trim(); if (!text) return;   
                 clearTimeout(timerTanyaMasiAda); clearTimeout(timerAkhiriChat);
-                addMessageToUI(text, "user"); ci.value = ""; ci.style.height = "42px";
-                ti.classList.remove("hidden"); ti.classList.add("flex"); cm.scrollTo({ top: cm.scrollHeight, behavior: 'smooth' });
+                
+                addMessageToUI(text, "user"); 
+                ci.value = ""; ci.style.height = "42px";
+                ti.classList.remove("hidden"); ti.classList.add("flex"); 
+                cm.scrollTo({ top: cm.scrollHeight, behavior: 'smooth' });
                 
                 setTimeout(() => {
                     ti.classList.add("hidden"); ti.classList.remove("flex");
-                    const lt = text.toLowerCase(); const kl = lt.split(/\s+/); let botReply = ""; 
-                    
-                    const isSapa = ["halo","hai","hi","p","assalamualaikum","pagi","siang","sore","malam"].some(s=>kl.includes(s));
-                    const isHarga = ["harga", "biaya", "paket", "pricelist", "berapa", "bayar"].some(k=>lt.includes(k));
-                    const isJadwal = ["jadwal", "kosong", "available", "tanggal"].some(k=>lt.includes(k));
-                    const isMakasih = ["makasih", "terima kasih", "oke", "ok", "baik", "sip"].some(k=>lt.includes(k));
-                    const isTidakAda = ["tidak", "gak", "udah", "sudah", "cukup"].some(k=>kl.includes(k));
                     const noWa = "6288991068917";
-
-                    if (isHarga) {
-                        botReply = `Untuk investasi jasa MC kami sangat terjangkau, yaitu mulai dari <strong>Rp 250.000</strong> saja.<br><br>Untuk menyesuaikan *budget* dan konsep acara Anda, silakan berdiskusi lebih lanjut dengan tim kami via WhatsApp ya! 😊<br><a href='https://wa.me/${noWa}?text=Halo%20Admin,%20saya%20ingin%20bertanya%20detail%20paket%20dan%20harga%20MC' target='_blank' class='block mt-3 bg-warnakedua text-black font-extrabold py-2 rounded-xl text-center shadow-md hover:scale-105 transition'>💬 Tanya Harga di WA</a>`;
-                    } else if (isJadwal) {
-                        botReply = `Untuk memastikan ketersediaan tanggal acara Anda, mohon hubungi kami melalui WhatsApp agar tim Admin dapat langsung mengecek kalender jadwal MC kami.<br><a href='https://wa.me/${noWa}?text=Halo%20Admin,%20saya%20ingin%20cek%20ketersediaan%20jadwal%20MC' target='_blank' class='block mt-3 bg-warnakedua text-black font-extrabold py-2 rounded-xl text-center shadow-md hover:scale-105 transition'>📅 Cek Jadwal via WA</a>`;
-                    } else if (isMakasih && !isTidakAda) {
-                        botReply = "Sama-sama! Ada informasi lain yang ingin Anda tanyakan seputar layanan MC Nusantara?";
-                    } else if (isTidakAda || (isMakasih && isTidakAda)) {
-                        botReply = "Terima kasih telah menghubungi MC Nusantara. Semoga persiapan acara Anda berjalan lancar dan sukses! ✨";
-                        clearTimeout(timerTanyaMasiAda); setTimeout(() => { if(cx) cx.click(); }, 3500); 
-                    } else if (isSapa && !sudahDisapa) { 
-                        botReply = "Halo! Terima kasih sudah mampir. Silakan tanyakan informasi seputar harga paket, jadwal MC, atau jenis acara yang ingin Anda langsungkan."; sudahDisapa = true; 
-                    } else { 
-                        botReply = `Agar kami bisa memberikan penjelasan yang lebih lengkap dan nyaman, mari lanjutkan obrolan ini melalui WhatsApp resmi kami.<br><a href="https://wa.me/${noWa}?text=Halo%20Admin%20MC%20Nusantara,%20saya%20ingin%20bertanya%20seputar%20layanan" target="_blank" class="block mt-3 bg-green-500 text-white font-extrabold py-2 rounded-xl text-center shadow-md hover:scale-105 transition">💬 Chat Admin WhatsApp</a>`;
-                    }
-                    
+                    const botReply = `Agar kami dapat merespons pertanyaan Anda dengan lebih jelas dan cepat, mari lanjutkan obrolan ini langsung melalui WhatsApp resmi kami 😊.<br><a href="https://wa.me/${noWa}?text=Halo%20Admin%20MC%20Nusantara,%20saya%20ingin%20bertanya%20seputar%20layanan" target="_blank" class="flex items-center justify-center gap-2 mt-3 bg-green-500 text-white font-extrabold py-2.5 rounded-xl shadow-md hover:scale-[1.02] transition"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg> Chat WA Admin</a>`;
                     addMessageToUI(botReply, "model");
-                    if (!isTidakAda) resetTimerChat();
+                    resetTimerChat();
                 }, 1000);
             }
-            sc.addEventListener("click", handleSend); ci.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); } });
+            
+            sc.addEventListener("click", handleSend); 
+            ci.addEventListener("keydown", (e) => { if (e.key === "Enter" && !e.shiftKey) { e.preventDefault(); handleSend(); } });
         });
 
-        // Form Utama WhatsApp
+        // 3. FUNGSI KIRIM FORM BOOKING MC
         document.getElementById("bookingForm").addEventListener("submit", function(e) {
             e.preventDefault(); 
             const n = document.getElementById("nama").value;
@@ -644,7 +751,19 @@
             const t = document.getElementById("tanggal").value;
             const l = document.getElementById("lokasi").value;
             const c = document.getElementById("catatan").value;
-            const msg = `Halo Manajemen MC Nusantara, saya bermaksud mereservasi layanan MC dengan rincian:%0A%0A*Nama:* ${n}%0A*Acara:* ${a}%0A*Tanggal:* ${t}%0A*Lokasi:* ${l}%0A*Catatan:* ${c ? c : '-'}`;
+            const msg = `Halo Admin MC Nusantara, saya bermaksud melakukan *Booking MC* dengan rincian:%0A%0A*Nama/Instansi:* ${n}%0A*Acara:* ${a}%0A*Tanggal:* ${t}%0A*Lokasi:* ${l}%0A*Catatan Khusus:* ${c ? c : '-'}`;
+            window.open(`https://wa.me/6288991068917?text=${msg}`, '_blank');
+        });
+
+        // 4. FUNGSI KIRIM FORM PELATIHAN MC
+        document.getElementById("pelatihanForm").addEventListener("submit", function(e) {
+            e.preventDefault(); 
+            const n = document.getElementById("p_nama").value;
+            const u = document.getElementById("p_usia").value;
+            const d = document.getElementById("p_domisili").value;
+            const p = document.getElementById("p_pengalaman").value;
+            const m = document.getElementById("p_motivasi").value;
+            const msg = `Halo Admin MC Nusantara, saya bermaksud mendaftar *Pelatihan MC & Public Speaking* dengan rincian data:%0A%0A*Nama:* ${n}%0A*Usia:* ${u} Tahun%0A*Domisili:* ${d}%0A*Pengalaman:* ${p}%0A*Motivasi:* ${m}`;
             window.open(`https://wa.me/6288991068917?text=${msg}`, '_blank');
         });
 
